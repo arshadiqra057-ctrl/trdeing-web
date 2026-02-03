@@ -1,0 +1,75 @@
+version: '3.8'
+services:
+  # Backend API (PHP-FPM)
+  app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: trading-backend
+    container_name: trading-backend
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./backend:/var/www
+    networks:
+      - trading-network
+
+  # Nginx for Backend (PHP-FPM needs a web server)
+  backend-server:
+    image: nginx:alpine
+    container_name: trading-backend-server
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend:/var/www
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+    networks:
+      - trading-network
+
+  # Frontend (React + Nginx)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: trading-frontend
+    container_name: trading-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    networks:
+      - trading-network
+
+  # Database
+  db:
+    image: mysql:8.0
+    container_name: trading-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: trading_db
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: password
+      MYSQL_USER: user
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - trading-network
+
+  # Redis (Cache/Queues)
+  redis:
+    image: redis:alpine
+    container_name: trading-redis
+    restart: unless-stopped
+    networks:
+      - trading-network
+
+networks:
+  trading-network:
+    driver: bridge
+
+volumes:
+  dbdata:
