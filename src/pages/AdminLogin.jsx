@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 
+import logo from '../assets/new_logo.png';
 const AdminLogin = () => {
     const { login } = useAuth();
     const [formData, setFormData] = React.useState({
@@ -70,7 +71,9 @@ const AdminLogin = () => {
                     {/* No Image Side - Just Form */}
                     <div className="auth-form-side" style={{ padding: '40px 30px', width: '100%', background: '#1e293b' }}>
                         <div className="auth-header" style={{ marginBottom: '30px', textAlign: 'center' }}>
-                            <div className="admin-icon" style={{ fontSize: '3rem', marginBottom: '1rem' }}>🛡️</div>
+                            <div className="admin-icon" style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
+                                <img src={logo} alt="Admin Logo" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
+                            </div>
                             <h1 style={{ color: 'white', fontSize: '1.8rem', marginBottom: '10px' }}>Admin Portal</h1>
                             <p style={{ color: '#94a3b8' }}>Secure Login Required</p>
                         </div>

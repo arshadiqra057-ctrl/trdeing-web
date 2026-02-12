@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/new_logo.png';
 
 const Footer = () => {
     return (
@@ -10,11 +10,11 @@ const Footer = () => {
                 <div className="footer-brand-section">
 
                     <div className="footer-logo">
-                        <img src={logo} alt="BuckHolding Logo" style={{ height: '40px', width: 'auto', marginRight: '10px' }} />
-                        <span className="footer-brand-name">BuckHolding</span>
+                        <img src={logo} alt="Investment Smart Crypto Investing Logo" style={{ height: '50px', width: 'auto', marginRight: '10px' }} />
+                        <span className="footer-brand-name">Investment Smart Crypto Investing</span>
                     </div>
                     <p className="footer-description">
-                        BuckHolding is a multi-asset, tech-focused broker utilizing advanced algorithms for enhanced trading conditions.
+                        Investment Smart Crypto Investing is a multi-asset, tech-focused broker utilizing advanced algorithms for enhanced trading conditions.
                     </p>
                 </div>
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import '../pages/Dashboard.css'; // Use existing dashboard styles
+import logo from '../assets/new_logo.png';
 
 const DashboardLayout = ({ children, activePage }) => {
     const navigate = useNavigate();
@@ -38,8 +39,8 @@ const DashboardLayout = ({ children, activePage }) => {
             {/* Sidebar code remains same until Bottom Nav */}
             <aside className="dashboard-sidebar">
                 <div className="logo-container">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#3b82f6' }}><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                    <span>BuckHolding</span>
+                    <img src={logo} alt="Investment Smart Crypto Investing Logo" style={{ width: 'auto', height: '40px', objectFit: 'contain' }} />
+                    <span>Investment Smart Crypto Investing</span>
                 </div>
                 <ul className="sidebar-menu">
                     <li className="sidebar-item"><div className={`sidebar-link ${activePage === 'dashboard' ? 'active' : ''}`} onClick={() => navigate('/dashboard')}>
@@ -142,8 +143,8 @@ const DashboardLayout = ({ children, activePage }) => {
 
                     {/* Right Side: User Profile */}
                     <div className="header-right" style={{ position: 'relative' }}>
-                        <div 
-                            className="user-profile" 
+                        <div
+                            className="user-profile"
                             onClick={() => setShowDropdown(!showDropdown)}
                             style={{ cursor: 'pointer', userSelect: 'none' }}
                         >
@@ -181,9 +182,9 @@ const DashboardLayout = ({ children, activePage }) => {
                                 <div className="dropdown-item file-input-wrapper">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
                                     <span>Upload Photo</span>
-                                    <input 
-                                        type="file" 
-                                        accept="image/*" 
+                                    <input
+                                        type="file"
+                                        accept="image/*"
                                         onChange={handleImageUpload}
                                         className="hidden-file-input"
                                     />

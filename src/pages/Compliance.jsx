@@ -28,7 +28,7 @@ const Compliance = () => {
                     {/* Policy Text */}
                     <div className="policy-text-section">
                         <p className="intro-text">
-                            BuckHolding ("we," "us," or "our") values your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services. Please read this policy carefully to understand our views and practices regarding your personal data.
+                            Investment Smart Crypto Investing ("we," "us," or "our") values your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services. Please read this policy carefully to understand our views and practices regarding your personal data.
                         </p>
 
                         <div className="policy-block">

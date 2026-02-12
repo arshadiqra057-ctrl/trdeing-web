@@ -22,7 +22,7 @@ const About = () => {
     },
     about: {
       title: 'About Us',
-      text: 'At BuckHolding, we are committed to providing an intuitive and reliable trading experience. Our platform is designed to simplify the trading process and empower investors with the resources they need to succeed. With offices across four continents, we challenge our people to think differently and ask themselves; how should trading look like tomorrow?'
+      text: 'At Investment Smart Crypto Investing, we are committed to providing an intuitive and reliable trading experience. Our platform is designed to simplify the trading process and empower investors with the resources they need to succeed. With offices across four continents, we challenge our people to think differently and ask themselves; how should trading look like tomorrow?'
     },
     vision: {
       title: 'Our Vision',
@@ -335,7 +335,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* BuckHolding More Than Trading Section */}
+      {/* Investment Smart Crypto Investing More Than Trading Section */}
       <section className="more-than-trading">
         <div className="more-container">
           <div className="more-left">
@@ -345,7 +345,7 @@ const About = () => {
             </div>
 
             <h2 className="more-heading">
-              BuckHolding: More Than Trading
+              Investment Smart Crypto Investing: More Than Trading
             </h2>
 
             <p className="more-description">
@@ -381,7 +381,7 @@ const About = () => {
             <div className="team-image-wrapper">
               <img
                 src={teamImage}
-                alt="BuckHolding Team"
+                alt="Investment Smart Crypto Investing Team"
                 className="team-image"
               />
               <div className="chart-overlay-mockup">
@@ -418,7 +418,7 @@ const About = () => {
             <div className="step-visual-bg" style={{ backgroundImage: `url(${require('../assets/step-register.png')})` }}></div>
             <div className="step-info-overlay">
               <h3 className="step-card-title">Register</h3>
-              <p className="step-card-text">Sign up for a BuckHolding Live Account with our hassle-free process.</p>
+              <p className="step-card-text">Sign up for a Investment Smart Crypto Investing Live Account with our hassle-free process.</p>
             </div>
           </div>
           <div className="step-card">

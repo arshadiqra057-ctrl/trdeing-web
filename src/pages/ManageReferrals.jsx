@@ -13,10 +13,10 @@ const ManageReferrals = () => {
                 const response = await api.get('/user');
                 // Assuming the username is used for the referral reference
                 if (response.data && response.data.name) {
-                    const baseUrl = window.location.origin; // Or 'https://buckholding.com'
+                    const baseUrl = window.location.origin; // Or 'https://investment-smart-crypto.com'
                     // Clean name for URL if needed, or use ID. Using name as per screenshot example 'Nothingatall'
                     const refCode = response.data.name.replace(/\s+/g, '');
-                    setReferralLink(`https://buckholding.com?reference=${refCode}`);
+                    setReferralLink(`https://investment-smart-crypto.com?reference=${refCode}`);
                 }
             } catch (error) {
                 console.error("Failed to fetch user for referral link", error);

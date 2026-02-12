@@ -27,7 +27,7 @@ const Home = () => {
         { id: 'Data Encryption', title: 'Data Encryption', text: 'All sensitive data is encrypted and stored securely', desc: 'We implement the highest security standards to ensure your personal information and trading activities are safe.' },
         { id: 'Account Protection', title: 'Account Protection', text: 'Multi-factor authentication and advanced fraud detection', desc: 'Secure your wealth with industry-leading protection protocols.' },
         { id: 'Compliance', title: 'Compliance', text: 'Fully regulated and compliant with global standards', desc: 'We operate with transparency and adhere to all legal requirements.' },
-        { id: 'Refer And Earn', title: 'Refer And Earn', text: 'Invite friends and get rewards for every successful referral', desc: 'Grow your portfolio by sharing the BuckHolding experience with others.' },
+        { id: 'Refer And Earn', title: 'Refer And Earn', text: 'Invite friends and get rewards for every successful referral', desc: 'Grow your portfolio by sharing the Investment Smart Crypto Investing experience with others.' },
     ];
 
     const activeTabContent = securityTabs.find(tab => tab.id === activeSecurityTab);
@@ -293,11 +293,11 @@ const Home = () => {
                     <div className="hero-left">
                         <div className="brand-tag">
                             <span className="star-icon">✦</span>
-                            <span className="brand-name">BuckHolding</span>
+                            <span className="brand-name">Investment Smart Crypto Investing</span>
                         </div>
                         <h1 className="hero-title">
                             Welcome to<br />
-                            <span className="highlight">BuckHolding</span>
+                            <span className="highlight">Investment Smart Crypto Investing</span>
                         </h1>
                         <p className="hero-subtitle">
                             Empower your financial future with our user-friendly stock trading platform.
@@ -593,7 +593,7 @@ const Home = () => {
                         <div className="step-visual-bg" style={{ backgroundImage: `url(${require('../assets/step-register.png')})` }}></div>
                         <div className="step-info-overlay">
                             <h3 className="step-card-title">Register</h3>
-                            <p className="step-card-text">Sign up for a BuckHolding Live Account with our hassle-free process.</p>
+                            <p className="step-card-text">Sign up for a Investment Smart Crypto Investing Live Account with our hassle-free process.</p>
                         </div>
                     </div>
                     <div className="step-card">

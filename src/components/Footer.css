@@ -46,9 +46,10 @@
     gap: 12px;
 }
 
-.footer-logo svg {
-    width: 32px;
-    height: 32px;
+.footer-logo img {
+    width: auto;
+    height: 50px;
+    object-fit: contain;
 }
 
 .footer-brand-name {

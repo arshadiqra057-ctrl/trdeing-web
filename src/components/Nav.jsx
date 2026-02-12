@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from '../context/AuthContext';
 import './Nav.css';
-import logo from '../assets/navbar_logo.png';
+import logo from '../assets/new_logo.png';
 
 function Nav() {
     const { isAuthenticated, logout } = useAuth();
@@ -23,7 +23,7 @@ function Nav() {
                     {/* Logo */}
                     <Link to="/" className="navbar-logo">
                         <div className="logo-icon">
-                            <img src={logo} alt="BuckHolding Logo" style={{ height: '40px', width: 'auto' }} />
+                            <img src={logo} alt="BuckHolding Logo" />
                         </div>
                     </Link>
 

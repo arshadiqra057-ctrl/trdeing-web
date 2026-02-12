@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import './Auth.css';
 import { motion } from 'framer-motion';
+import logo from '../assets/new_logo.png';
 
 const Signup = () => {
     const [formData, setFormData] = React.useState({
@@ -78,10 +79,7 @@ const Signup = () => {
                     <div className="auth-form-side">
                         <div className="auth-header">
                             <Link to="/" className="auth-logo">
-                                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 5L35 15V25L20 35L5 25V15L20 5Z" fill="#4A9FD4" stroke="#4A9FD4" strokeWidth="2" />
-                                    <path d="M12 18L20 12L28 18V26L20 32L12 26V18Z" fill="#1a3a5c" stroke="#4A9FD4" strokeWidth="1" />
-                                </svg>
+                                <img src={logo} alt="Logo" style={{ height: '60px' }} />
                             </Link>
                             <h1>Create Account</h1>
                             <p>Sign up to start your trading experience</p>

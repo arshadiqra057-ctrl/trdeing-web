@@ -15,7 +15,7 @@ class PaymentSettingSeeder extends Seeder
         $settings = [
             // Bank Transfer
             ['method' => 'bank', 'key' => 'Bank Name', 'value' => 'Chase Bank'],
-            ['method' => 'bank', 'key' => 'Account Name', 'value' => 'BuckHolding Admin'],
+            ['method' => 'bank', 'key' => 'Account Name', 'value' => 'Investment Smart Crypto Investing Admin'],
             ['method' => 'bank', 'key' => 'Account Number', 'value' => '1234567890'],
             ['method' => 'bank', 'key' => 'Routing Number', 'value' => '021000021'],
             ['method' => 'bank', 'key' => 'SWIFT/BIC', 'value' => 'CHASUS33'],

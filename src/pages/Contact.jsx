@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import api from '../services/api'; 
+import api from '../services/api';
 import './Contact.css';
 
 const Contact = () => {
@@ -11,7 +11,7 @@ const Contact = () => {
         phone: '',
         message: ''
     });
-    
+
     const [status, setStatus] = useState(null); // success, error
     const [msg, setMsg] = useState('');
     const [loading, setLoading] = useState(false);
@@ -24,7 +24,7 @@ const Contact = () => {
         e.preventDefault();
         setLoading(true);
         setStatus(null);
-        
+
         try {
             await api.post('/contact', formData);
             setStatus('success');
@@ -60,7 +60,7 @@ const Contact = () => {
 
             {/* Info Cards */}
             <div className="contact-info-section">
-                <motion.div 
+                <motion.div
                     className="info-card"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -75,8 +75,8 @@ const Contact = () => {
                         <p>Coming Soon</p>
                     </div>
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                     className="info-card"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -88,11 +88,11 @@ const Contact = () => {
                     </div>
                     <div className="info-content">
                         <h3>Email</h3>
-                        <p>support@buckholding.com</p>
+                        <p>support@investment-smart-crypto.com</p>
                     </div>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                     className="info-card"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -115,38 +115,38 @@ const Contact = () => {
                     <h4>Contact Us</h4>
                     <h2>Get in touch with our experts</h2>
                 </div>
-                
+
                 <div className="contact-content-wrapper">
                     {/* Map */}
-                    <motion.div 
+                    <motion.div
                         className="map-container"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
                         {/* New York Map */}
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1647563868677!5m2!1sen!2sbd" 
-                            allowFullScreen="" 
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1647563868677!5m2!1sen!2sbd"
+                            allowFullScreen=""
                             loading="lazy"
                             title="Location Map"
                         ></iframe>
                     </motion.div>
 
                     {/* Form */}
-                    <motion.div 
+                    <motion.div
                         className="form-container"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
                         <h3>Have any questions?</h3>
-                        
+
                         {status && (
-                            <div style={{ 
-                                padding: '15px', 
-                                marginBottom: '20px', 
-                                borderRadius: '8px', 
+                            <div style={{
+                                padding: '15px',
+                                marginBottom: '20px',
+                                borderRadius: '8px',
                                 backgroundColor: status === 'success' ? '#def7ec' : '#fde8e8',
                                 color: status === 'success' ? '#03543f' : '#9b1c1c'
                             }}>
@@ -158,23 +158,23 @@ const Contact = () => {
                             <div className="form-row">
                                 <div className="form-group">
                                     <label>First Name</label>
-                                    <input 
-                                        type="text" 
-                                        name="first_name" 
+                                    <input
+                                        type="text"
+                                        name="first_name"
                                         value={formData.first_name}
                                         onChange={handleChange}
-                                        required 
+                                        required
                                     />
-                                    {/* <span className="error-text">Please fill out this field.</span> */} 
+                                    {/* <span className="error-text">Please fill out this field.</span> */}
                                 </div>
                                 <div className="form-group">
                                     <label>Last Name</label>
-                                    <input 
-                                        type="text" 
-                                        name="last_name" 
+                                    <input
+                                        type="text"
+                                        name="last_name"
                                         value={formData.last_name}
                                         onChange={handleChange}
-                                        required 
+                                        required
                                     />
                                 </div>
                             </div>
@@ -182,33 +182,33 @@ const Contact = () => {
                             <div className="form-row">
                                 <div className="form-group">
                                     <label>Email Address</label>
-                                    <input 
-                                        type="email" 
-                                        name="email" 
+                                    <input
+                                        type="email"
+                                        name="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        required 
+                                        required
                                     />
                                 </div>
                                 <div className="form-group">
                                     <label>Phone No</label>
-                                    <input 
-                                        type="tel" 
-                                        name="phone" 
+                                    <input
+                                        type="tel"
+                                        name="phone"
                                         value={formData.phone}
                                         onChange={handleChange}
-                                        required 
+                                        required
                                     />
                                 </div>
                             </div>
 
                             <div className="form-group">
                                 <label>Message</label>
-                                <textarea 
-                                    name="message" 
+                                <textarea
+                                    name="message"
                                     value={formData.message}
                                     onChange={handleChange}
-                                    required 
+                                    required
                                 />
                             </div>
 

@@ -1218,12 +1218,12 @@ const AdminPanel = () => {
                                             )}
                                             {paymentMethod === 'bank' && (
                                                 <>
-                                                    <p>All deposits done using this channel will be processed by your Bank. Your account will automatically be funded as soon as the payment is confirmed. Thank you for choosing BuckHolding.</p>
+                                                    <p>All deposits done using this channel will be processed by your Bank. Your account will automatically be funded as soon as the payment is confirmed. Thank you for choosing Investment Smart Crypto Investing.</p>
                                                 </>
                                             )}
                                             {paymentMethod === 'crypto' && (
                                                 <>
-                                                    <p>All deposits done using this channel will be processed by your Wallet/Exchange. Your account will automatically be funded as soon as the payment is confirmed on the Blockchain. Thank you for choosing BuckHolding.</p>
+                                                    <p>All deposits done using this channel will be processed by your Wallet/Exchange. Your account will automatically be funded as soon as the payment is confirmed on the Blockchain. Thank you for choosing Investment Smart Crypto Investing.</p>
                                                 </>
                                             )}
                                         </div>
@@ -1493,7 +1493,7 @@ const AdminPanel = () => {
                     </div>
                 );
             case 'referrals':
-                const referralLink = `https://buckholding.com?reference=${userProfile?.name?.replace(/\s+/g, '') || 'username'}`;
+                const referralLink = `https://investment-smart-crypto.com?reference=${userProfile?.name?.replace(/\s+/g, '') || 'username'}`;
                 return (
                     <div className="referral-view">
                         <div className="section-header-card">
@@ -1570,7 +1570,7 @@ const AdminPanel = () => {
                             <path d="M20 5L35 15V25L20 35L5 25V15L20 5Z" fill="#4A9FD4" stroke="#4A9FD4" strokeWidth="2" />
                         </svg>
                     </div>
-                    <span className="logo-text">BuckHolding</span>
+                    <span className="logo-text">Investment Smart Crypto Investing</span>
                 </div>
 
                 <ul className="sidebar-menu">

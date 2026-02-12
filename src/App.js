@@ -31,6 +31,17 @@ import AdminLogin from './pages/AdminLogin';
 
 import { AuthProvider } from './context/AuthContext';
 
+// Layout Component to handle Nav and Footer logic
+const MainLayout = () => {
+    return (
+        <>
+            <NavWrapper />
+            <Outlet />
+            <FooterWrapper />
+        </>
+    );
+};
+
 function App() {
     return (
         <AuthProvider>
@@ -38,62 +49,51 @@ function App() {
                 <div className="App">
                     <ScrollToTop />
                     <Routes>
-                        <Route
-                            path="*"
-                            element={
-                                <>
-                                    <NavWrapper />
-                                    <Routes>
-                                        <Route path="/" element={<Home />} />
-                                        <Route path="/about" element={<About />} />
-                                        <Route path="/compliance" element={<Compliance />} />
-                                        {/* Public Support Page - maybe for FAQs? If same as Dashboard Support, should be protected. Assuming public for now or redirecting */}
-                                        {/* <Route path="/support" element={<Support />} /> */}
+                        <Route path="/" element={<MainLayout />}>
+                            <Route index element={<Home />} />
+                            <Route path="about" element={<About />} />
+                            <Route path="compliance" element={<Compliance />} />
+                            <Route path="contact" element={<Contact />} />
 
-                                        <Route path="/login" element={<Login />} />
-                                        <Route path="/signup" element={<Signup />} />
-                                        <Route path="/contact" element={<Contact />} />
-                                        <Route path="/forgot-password" element={<ForgotPassword />} />
-                                        <Route path="/reset-password" element={<ResetPassword />} />
+                            <Route path="login" element={<Login />} />
+                            <Route path="signup" element={<Signup />} />
+                            <Route path="forgot-password" element={<ForgotPassword />} />
+                            <Route path="reset-password" element={<ResetPassword />} />
 
-                                        {/* Protected User Routes */}
-                                        <Route element={<ProtectedRoute />}>
-                                            <Route path="/kyc" element={<KycSubmission />} />
-                                            <Route path="/fund" element={<PaymentForm />} />
-                                            <Route path="/deposit-history" element={<DepositHistory />} />
-                                            <Route path="/dashboard" element={<Dashboard />} />
-                                            <Route path="/stocks" element={<AllStocks />} />
-                                            <Route path="/assets" element={<ManageAssets />} />
-                                            <Route path="/transfer" element={<TransferBalance />} />
+                            {/* Protected User Routes */}
+                            <Route element={<ProtectedRoute />}>
+                                <Route path="kyc" element={<KycSubmission />} />
+                                <Route path="fund" element={<PaymentForm />} />
+                                <Route path="deposit-history" element={<DepositHistory />} />
+                                <Route path="dashboard" element={<Dashboard />} />
+                                <Route path="stocks" element={<AllStocks />} />
+                                <Route path="assets" element={<ManageAssets />} />
+                                <Route path="transfer" element={<TransferBalance />} />
 
-                                            <Route path="/deposit" element={<Navigate to="/deposit/new" replace />} />
-                                            <Route path="/deposit/new" element={<ManageDeposit defaultTab="new" />} />
-                                            <Route path="/deposit/history" element={<ManageDeposit defaultTab="history" />} />
+                                <Route path="deposit" element={<Navigate to="/deposit/new" replace />} />
+                                <Route path="deposit/new" element={<ManageDeposit defaultTab="new" />} />
+                                <Route path="deposit/history" element={<ManageDeposit defaultTab="history" />} />
 
-                                            <Route path="/withdraw" element={<Navigate to="/withdraw/new" replace />} />
-                                            <Route path="/withdraw/new" element={<ManageWithdraw defaultTab="new" />} />
-                                            <Route path="/withdraw/history" element={<ManageWithdraw defaultTab="history" />} />
+                                <Route path="withdraw" element={<Navigate to="/withdraw/new" replace />} />
+                                <Route path="withdraw/new" element={<ManageWithdraw defaultTab="new" />} />
+                                <Route path="withdraw/history" element={<ManageWithdraw defaultTab="history" />} />
 
-                                            <Route path="/transactions" element={<TransactionHistory />} />
+                                <Route path="transactions" element={<TransactionHistory />} />
 
-                                            <Route path="/support" element={<Navigate to="/support/history" replace />} />
-                                            <Route path="/support/new" element={<Support defaultTab="new" />} />
-                                            <Route path="/support/history" element={<Support defaultTab="history" />} />
+                                <Route path="support" element={<Navigate to="/support/history" replace />} />
+                                <Route path="support/new" element={<Support defaultTab="new" />} />
+                                <Route path="support/history" element={<Support defaultTab="history" />} />
 
-                                            <Route path="/referrals" element={<ManageReferrals />} />
-                                            <Route path="/profile" element={<Profile />} />
-                                        </Route>
-                                    </Routes>
-                                    <FooterWrapper />
-                                </>
-                            }
-                        />
-                        <Route
-                            path="/admin"
-                            element={
-                                <AdminRoute />
-                            }
-                        />
+                                <Route path="referrals" element={<ManageReferrals />} />
+                                <Route path="profile" element={<Profile />} />
+                            </Route>
+                        </Route>
+
+                        {/* Admin Route - Outside MainLayout because it might have its own or no layout */}
+                        <Route path="/admin" element={<AdminRoute />} />
+
+                        {/* Catch-all to redirect to home or show 404 */}
+                        <Route path="*" element={<Navigate to="/" replace />} />
                     </Routes>
                 </div>
             </Router>
@@ -118,24 +118,6 @@ const AdminRoute = () => {
 
 // Protected User Route Component
 const ProtectedRoute = () => {
-    const token = localStorage.getItem('token');
-    // We could also check useAuth() here if we imported it, 
-    // but checking token is a quick synchronous check to prevent flash.
-    // Ideally use useAuth for more robust checking.
-    // Let's use useAuth actually, since we are inside AuthProvider.
-    return <ProtectedRouteInner />;
-};
-
-const ProtectedRouteInner = () => {
-    // We need to move useAuth usage to a component inside the provider
-    // But ProtectedRoute is used inside Routes which is inside AuthProvider
-    // So we can just use useAuth directly in the component used in 'element' prop? 
-    // No, <Route element={<ProtectedRoute />}> works fine.
-
-    // However, App is the one rendering AuthProvider.
-    // ProtectedRoute is defined outside App? No, inside App file but outside App component?
-    // Move components outside App to be clean, or use imports.
-    // Since I am editing App.js, I will define it outside.
     return <OutletWithAuth />;
 };
 
@@ -193,4 +175,3 @@ const FooterWrapper = () => {
 };
 
 export default App;
-

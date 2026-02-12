@@ -25,7 +25,7 @@
 
 /* ===== Main Navbar ===== */
 .main-navbar {
-    background: rgba(15, 40, 71, 0.95);
+    background: rgba(18, 78, 151, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 0 40px;
@@ -51,9 +51,11 @@
     text-decoration: none;
 }
 
-.logo-icon svg {
-    width: 65px;
-    height: 65px;
+.logo-icon img {
+    width: 130px;
+    height: 130px;
+    border-radius: 10%;
+    object-fit: contain;
 }
 
 /* Navigation Menu */
